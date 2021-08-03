@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  answer: string;
+  calc = 0;
+
   constructor() {}
 
 }

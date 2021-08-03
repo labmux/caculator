@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Cacl
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,32 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <div id="calculator">
+      <input type="text" name="input" size="16" *ngModel="answer">
+
+      <input type="button" name="one" value="1" (click)="calc = calc + 1">
+      <input type="button" name="two" value="2" (click)="calc = calc + 2">
+      <input type="button" name="three" value="3" (click)="calc = calc + 3">
+      <input type="button" class="operator" name="plus" value="+" (click)="calc= '+'">
+      <br>
+      <input type="button" name="four" value="4" (click)="calc.input.value += '4'">
+      <input type="button" name="five" value="5" (click)="calc.input.value += '5'">
+      <input type="button" name="six" value="6" (click)="calc.input.value += '6'">
+      <input type="button" class="operator" name="minus" value="-" (click)="calc.input.value += '-'">
+      <br>
+      <input type="button" name="seven" value="7" (click)="calc.input.value += '7'">
+      <input type="button" name="eight" value="8" (click)="calc.input.value += '8'">
+      <input type="button" name="nine" value="9" (click)="calc.input.value += '9'">
+      <input type="button" class="operator" name="times" value="*" (click)="calc.input.value += '*'">
+      <br>
+      <input type="button" id="clear" name="clear" value=" C " (click)="calc.input.value=''">
+      <input type="button" name="zero" value="0" (click)="calc.input.value +='0'">
+      <input type="button" name="doit" value=" = " (click)="calc.input.value=eval(calc.input.value)">
+      <input type="button" class="operator" name="div" value="/" (click)="calc.input.value += '/'">
+      <br>
+    </div>
+
+
   </div>
 </ion-content>
