@@ -1,58 +1,42 @@
-#container {
-  //text-align: center;
-
-  //padding-left: 50%;
-  //padding-right: 50%;
-  //padding-top: 20%;
-  //position: fixed;
-  //left: 50%;
-  //right: 50%;
-  //right: 0;
-  //top: 50%;
-  //transform: translateY(-50%);
-}
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
 ion-content {
-
   background-color: red;
 
   div#container {
+      width: 100%;
+      height: 100%;
       margin: auto;
       background-color: #9dd2ea;
-      width: 295px;
-      height: 325px;
       text-align: center;
       border-radius: 4px;
+      overflow: hidden;
+
+    #calculator {
+      width: 100%;
+      height: 100%;
+    }
+
+    #answer{
+      text-align: right;
+      margin-right: 15%;
+      width: 100%;
+      height: 25%;
+      font-size: 26px;
+      background-color: #f1faeb;
+      float: left;
+      padding-right: 8%;
+    }
 
     input {
       outline: 0;
       position: relative;
-      left: 5px;
-      top: 5px;
+      //left: 5px;
+      //top: 5px;
       border: 0;
       color: #495069;
-      width: 60px;
-      height: 50px;
+      width: 25%;
+      height: 18.75%;
       float: left;
-      margin: 5px;
+      //margin: 5px;
       font-size: 20px;
       box-shadow: 0 4px rgba(0,0,0,0.2);
     }
@@ -70,42 +54,28 @@ ion-content {
       margin-bottom: 15px;
     }
 
-    #answer{
-      width: 270px;
-      font-size: 26px;
-      text-align: center;
-      background-color: #f1faeb;
+    /* add input hover effectg */
+    input:active{
+      color: #495069;
+      opacity: 0.6;
       float: left;
+      //box-shadow:  4px 0 #644294;
     }
+
     /* answer hover effect */
-    #answer:hover{
-      width: 270px;
-      font-size: 26px;
-      text-align: center;
-      box-shadow: 0 4px rgba(0,0,0,0.2);
+    #answer:active{
+      box-shadow: 0 4px rgba(0,0,0.2,0);
       background-color: #f1faeb;
     }
 
-    /* add input hover effectg */
-    input:hover{
-      border: 0 solid #000;
-      color: #495069;
-      background-color: #8f5fda;
-      border-radius: 4px;
-      width: 60px;
-      height: 50px;
-      float: left;
-      margin: 5px;
-      font-size: 20px;
-      box-shadow: 0 4px #644294;
-    }
+
     /* hover */
-    .operator:hover{
+    .operator:active{
       background-color: #e7f56b;
       box-shadow: 0 4px #b7c259;
     }
     /* hover */
-    #clear:hover{
+    #clear:active{
       float: left;
       display: block;
       background-color: #f297a0;
