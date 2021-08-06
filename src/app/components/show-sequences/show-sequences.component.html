@@ -1,0 +1,22 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Sequences</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" (click)="dismissModal()"><ion-icon name="close"></ion-icon>Cancel</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+
+  <ion-list>
+    <ion-item *ngFor="let d of data">
+      <ion-label>
+        <h2>{{d.sequence}}</h2>
+      </ion-label>
+      <ion-label>
+        <h2>{{d.response}}</h2>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

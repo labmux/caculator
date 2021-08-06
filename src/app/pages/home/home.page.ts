@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {AlertController} from "@ionic/angular";
+import {AlertController, ModalController} from "@ionic/angular";
+import {ShowSequencesComponent} from "../../components/show-sequences/show-sequences.component";
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import {AlertController} from "@ionic/angular";
 export class HomePage {
   private data: any;
 
-  constructor(private alert: AlertController) {
+  constructor(private alertController: AlertController,
+              private  modalController: ModalController) {
     this.data = [
       {sequence: '+1', response: 'You\'re a fag'},
       {sequence: '+2', response: 'You suck penis sometimes'},
@@ -25,9 +27,13 @@ export class HomePage {
     var answer = (<HTMLInputElement>document.getElementById('answer')).value;
 
     console.log('this.data ', this.data);
-    if(answer.includes('666')) {
+    if(answer === '666') {
       this.promptSequence();
     }
+    else if(answer === '6666') {
+      this.showSequences();
+    }
+
     if(this.data !== undefined && this.data.length > 0) {
       console.log('else if');
       for (let i = 0; i < this.data.length; i++) {
@@ -68,21 +74,21 @@ export class HomePage {
   }
 
   async promptSequence() {
-    const alert = await this.alert.create({
+    const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      header: 'Prompt!',
+      header: 'Create a sequence',
       inputs: [
         {
           name: 'sequence',
           type: 'text',
           id: 'sequence',
-          placeholder: '0'
+          placeholder: 'Ex: 1+2'
         },
         {
           name: 'response',
           type: 'text',
           id: 'response',
-          placeholder: 'You suck at math!'
+          placeholder: 'Response'
         }
       ],
       buttons: [
@@ -107,5 +113,15 @@ export class HomePage {
     });
 
     await alert.present();
+  }
+
+  async showSequences() {
+    const modal = await this.modalController.create({
+      component: ShowSequencesComponent,
+      componentProps: { data: this.data }
+    });
+
+    await modal.present();
+
   }
 }
