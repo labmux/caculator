@@ -20,6 +20,9 @@ export class ShowSequencesComponent implements OnInit {
     this.modalController.dismiss();
   }
 
+  delete(index: number) {
+    this.data.splice(index, 1);
+  }
   trackUnits(index, data) {
     return data.sequence; // or item.id
   }
