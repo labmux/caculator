@@ -17,7 +17,7 @@ export class ShowSequencesComponent implements OnInit {
   }
 
   dismissModal() {
-    this.modalController.dismiss();
+    this.modalController.dismiss({data: this.data});
   }
 
   delete(index: number) {
